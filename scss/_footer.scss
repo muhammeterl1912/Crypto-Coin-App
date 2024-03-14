@@ -4,9 +4,17 @@ footer {
   text-align: right;
   font-size: 1rem;
   color: $text_light;
-  margin-top: 2rem;
+height: 70vh;
+
+small{
+ display: flex;
+ align-items: end;
+}
+  display: flex;
+  align-items: end;
+  justify-content: end;
   span {
-    color: $red;
+    color: $golden;
     margin: 3px;
   }
 }

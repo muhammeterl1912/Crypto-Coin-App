@@ -6,14 +6,16 @@ const form = document.querySelector("form")
 // Event
 form.addEventListener("submit",(event)=>{
 event.preventDefault()
+getCoinsData()
 event.target.reset() 
+
 } )
 
-const getCoibsData = () =>{
-  const input = document.querySelector("form input").value
+const getCoinsData = () =>{
+  const input = document.querySelector("header form input").value
   if (!input.trim()) {
     alert("Input area can not be empty.")
   } else {
-    getCoins()
+    getCoins(input)
   }
 }
