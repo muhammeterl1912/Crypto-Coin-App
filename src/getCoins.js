@@ -1,4 +1,5 @@
 import axios from "axios";
+import displayCoins from "./displayCoins";
 export const getCoins = async (inputVal) => {
   const API_KEY = "coinranking6754c4b360f1865fbd0072c70a15a31488ea0ef7703d6471";
 
@@ -14,8 +15,8 @@ export const getCoins = async (inputVal) => {
 
     if (!res.data.data.coins[0]) {
       alert("Coin can not be found")
-    } else {console.log(res.data.data.coins[0])
-       
+    } else {
+       displayCoins(res.data.data.coins[0])
     }
   } catch (error) {
     console.log(error)
