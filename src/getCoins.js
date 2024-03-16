@@ -19,8 +19,13 @@ export const getCoins = async (inputVal) => {
       alert("Coin can not be found");
     } else {
       duplicateData(res.data.data.coins[0]);
-
-      displayCoins(res.data.data.coins[0]);
+      if (
+        !duplicate.some((item) => item.name === res.data.data.coins[0].name)
+      ) {
+        alert("Duplicate");
+      } else {
+        displayCoins(res.data.data.coins[0]);
+      }
     }
   } catch (error) {
     console.log(error);
