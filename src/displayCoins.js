@@ -1,8 +1,9 @@
-const displayCoins =({price,change,iconUrl,name,symbol,rank})=>{
-    const ul = document.querySelector("main .coins")
-    const coinLi = document.createElement("li")
-    coinLi.className = "coin"
-    coinLi.innerHTML = `
+import duplicateData from "./getCoins";
+const displayCoins = ({ price, change, iconUrl, name, symbol, rank }) => {
+  const ul = document.querySelector("main .coins");
+  const coinLi = document.createElement("li");
+  coinLi.className = "coin";
+  coinLi.innerHTML = `
   
     <div class="remove-icon">
       <i class="fas fa-window-close"></i>
@@ -22,13 +23,17 @@ const displayCoins =({price,change,iconUrl,name,symbol,rank})=>{
       </figcaption>
       <div>RANK: ${rank}</div>
     </figure>
-   `
-    ul.append(coinLi)
-  
-    //? Card içerisindeki sil butonu için event tanimlamasi
-    coinLi.querySelector(".remove-icon").addEventListener("click", () => {
-      coinLi.remove()
-    })
- 
-}
-export default displayCoins
+   `;
+  ul.append(coinLi);
+
+  // let card = document.querySelectorAll("li");
+  // card = [...card].length - 1
+
+  const deleteI = coinLi
+    .querySelector(".remove-icon")
+    .addEventListener("click", () => {
+      coinLi.remove();
+    });
+};
+
+export { displayCoins };
